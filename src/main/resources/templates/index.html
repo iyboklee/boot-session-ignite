@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="#{html.title}"></title>
+</head>
+<body>
+    <div>
+        <h1>Secured Page</h1>
+        <p>This page is secured using Spring Boot, Spring Session, Spring Security and Apache Ignite.</p>
+
+        <div th:with="currentUser=${#httpServletRequest.userPrincipal?.principal}">
+            <p id="un" th:text="${currentUser.username}">
+                username
+            </p>
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="Logout"/>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

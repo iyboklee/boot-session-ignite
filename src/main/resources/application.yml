@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: boot-session-ignite
+  security:
+    user:
+      password: 1234
+  messages:
+    basename: i18n/messages
+    encoding: UTF-8
+    cache-duration: PT1H
+server:
+  port: 8080
+ignite:
+  cluster:
+    nodes: 127.0.0.1:47500..47509
